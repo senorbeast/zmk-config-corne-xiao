@@ -20,7 +20,7 @@
 // =========================================================================================
 #define MAC 0
 #define WIN 1
-#define LOW 2
+#define LWR 2
 #define RAI 3
 #define TRI 4
 
@@ -41,7 +41,7 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <LOW RAI>;
+            if-layers = <LWR RAI>;
             then-layer = <TRI>;
         };
     };
@@ -162,7 +162,7 @@
         };
 
         // =========================================================================================
-        // 🧱 TRI LAYER (LOW + RAI)
+        // 🧱 TRI LAYER (LWR + RAI)
         // =========================================================================================
         tri {
             display-name = "tri";
