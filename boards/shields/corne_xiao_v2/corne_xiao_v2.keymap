@@ -20,9 +20,9 @@
 // =========================================================================================
 #define MAC 0
 #define WIN 1
-#define LOW 0
-#define RAI 1
-#define TRI 2
+#define LOW 2
+#define RAI 3
+#define TRI 4
 
 / {
     behaviors {
