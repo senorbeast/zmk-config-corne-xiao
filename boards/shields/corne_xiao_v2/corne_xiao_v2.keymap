@@ -8,12 +8,12 @@
 
 
 // Mac/Linux-style Home Row Mods
-#define HRML(k1, k2, k3, k4) &ht LSHIFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1, k2, k3, k4) &ht RGUI k1    &ht RCTRL k2  &ht RALT k3  &ht RSHIFT k4
+#define HRML(k1, k2, k3, k4) &ht LSHIFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4 
+#define HRMR(k1, k2, k3, k4) &ht RGUI k1    &ht RCTRL k2  &ht RALT k3  &ht RSHIFT k4 
 
 // Windows-style Home Row Mods (GUI before CTRL)
-#define WHRML(k1, k2, k3, k4) &ht LSHIFT k1  &ht LALT k2  &ht LGUI k3  &ht LCTRL k4
-#define WHRMR(k1, k2, k3, k4) &ht RCTRL k1   &ht RGUI k2  &ht RALT k3  &ht RSHIFT k4
+#define WHRML(k1, k2, k3, k4) &ht LSHIFT k1  &ht LALT k2  &ht LGUI k3  &ht LCTRL k4 
+#define WHRMR(k1, k2, k3, k4) &ht RCTRL k1   &ht RGUI k2  &ht RALT k3  &ht RSHIFT k4 
 
 // =========================================================================================
 // 🗂️ LAYER INDICES
@@ -79,7 +79,7 @@
 
             bindings = <
 &kp TAB   &kp Q &kp W &kp E   &kp R &kp T                         &kp Y   &kp U   &kp I   &kp O   &kp P   &kp BSPC
-&kp LCTRL HRML(A, S, D, F) &kp G                               &kp H   HRMR(J, K, L, SEMI) &kp SQT
+&kp LCTRL &ht LSHIFT A  &ht LALT S  &ht LCTRL S  &ht LGUI F &kp G                               &kp H   &ht RGUI J    &ht RCTRL K  &ht RALT L  &ht RSHIFT SEMI &kp SQT
 &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B                        &kp N   &kp M &kp COMMA &kp DOT &kp FSLH &kp ESC
                         &kp LGUI &lt LWR TAB &kp SPACE             &kp RET &lt RAI RSHIFT &kp LALT
             >;
@@ -104,7 +104,7 @@
 
             bindings = <
 &kp TAB   &kp Q &kp W &kp E   &kp R &kp T                         &kp Y   &kp U   &kp I   &kp O   &kp P   &kp BSPC
-&kp LCTRL WHRML(A, S, D, F) &kp G                               &kp H   WHRMR(J, K, L, SEMI) &kp SQT
+&kp LCTRL &ht LSHIFT A  &ht LALT S  &ht LGUI D  &ht LCTRL F &kp G                               &kp H   &ht RCTRL J   &ht RGUI K  &ht RALT L  &ht RSHIFT SEMI &kp SQT
 &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B                        &kp N   &kp M &kp COMMA &kp DOT &kp FSLH &kp ESC
                        &kp LGUI &lt LWR TAB &kp SPACE             &kp RET &lt RAI RSHIFT &kp LALT
             >;
