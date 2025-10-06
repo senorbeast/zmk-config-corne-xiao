@@ -81,9 +81,9 @@
 
             bindings = <
 &kp TAB   &kp Q &kp W &kp E   &kp R &kp T                         &kp Y   &kp U   &kp I   &kp O   &kp P   &kp BSPC
-&kp LCTRL HRML(A, S, D, F) &kp G               &kp H  HRMR(J, K, L, SEMI) &kp SQT
-&kp LSHIFT &kp Z &kp X &kp C &kp V &kp B                        &kp N   &kp M &kp COMMA &kp DOT &kp FSLH &kp ESC
-                        &kp LGUI &lt LWR TAB &kp SPACE          &kp RET &lt RAI RSHIFT &kp LALT
+&kp LCTRL HRML(A, S, D, F) &kp G                                  &kp H  HRMR(J, K, L, SEMI) &kp SQT
+&kp LSHIFT &kp Z &kp X &kp C &kp V &kp B                          &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp ESC
+                        &kp LGUI &lt LWR TAB &kp SPACE            &kp RET &lt RAI RSHIFT &kp LALT
             >;
         };
 
