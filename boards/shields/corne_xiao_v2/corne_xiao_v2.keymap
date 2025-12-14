@@ -24,6 +24,7 @@
 #define LWR 2
 #define RAI 3
 #define TRI 4
+#define GAME 5
 
 / {
     behaviors {
@@ -174,7 +175,7 @@
             //├──────────┼──────────┼──────────┼───────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
             //│ (empty)  │   F11    │   F12    │DEC BRIGHT │INC BRIGHT│          │   │  LEFT    │   DOWN   │   UP     │  RIGHT   │          │PAUSEMUSIC│
             //├──────────┼──────────┼──────────┼───────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-            //│ (empty)  │Caps Word │ WINDOWS  │ TOGGLEOUT │          │          │B 0│          │ VOL DOWN │  VOL UP  │ VOL MUTE │ZMK STUDIO│ PREVSONG │
+            //│ (empty)  │Caps Word │ WINDOWS  │ TOGGLEOUT │   GAME   │          │B 0│          │ VOL DOWN │  VOL UP  │ VOL MUTE │ZMK STUDIO│ PREVSONG │
             //╰──────────┴──────────┴──────────┴───────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────┴──────────╯
                         //                          │         │         │        │   │         │        │        │
                         //                          ╰─────────┴─────────┴────────╯   ╰─────────┴────────┴────────╯
@@ -182,14 +183,34 @@
             bindings = <
 &trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                                  &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp C_NEXT
 &trans &kp F11 &kp F12 &kp C_BRI_DEC &kp C_BRI_UP &trans                   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &kp C_PP
-&trans &caps_word &tog WIN &out OUT_TOG &trans &trans  &bootloader &none   &trans &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &studio_unlock &kp C_PREV
+&trans &caps_word &tog WIN &out OUT_TOG &tog GAME &trans  &bootloader &none   &trans &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &studio_unlock &kp C_PREV
                          &trans &trans &trans                   &trans &trans &trans
             >;
         };
 
-        extra1 {
-            display-name = "extra1";
-            status = "reserved";
+        // =========================================================================================
+        // 🎮 GAME LAYER (No Home Row Mods)
+        // =========================================================================================
+        game {
+            display-name = "game";
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+
+            //╭──────────┬──────────┬──────────┬───────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+            //│   TAB    │   Q      │   W      │   E       │   R      │   T      │   │   Y      │   U      │   I      │   O      │   P      │  BKSP    │
+            //├──────────┼──────────┼──────────┼───────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+            //│   CTRL   │   A      │   S      │   D       │   F      │   G      │   │   H      │   J      │   K      │   L      │   ;      │   '      │
+            //├──────────┼──────────┼──────────┼───────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+            //│   SHFT   │   Z      │   X      │   C       │   V      │   B      │B 0│   N      │   M      │   ,      │   .      │   /      │   ESC    │
+            //╰──────────┴──────────┴──────────┴───────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────┴──────────╯
+            //                                      │   GUI   │   LWR   │  SPACE │   │   ENTER  │   RAI  │  ALT   │
+            //                                      ╰─────────┴─────────┴────────╯   ╰──────────┴────────┴────────╯
+
+            bindings = <
+&kp TAB   &kp Q &kp W &kp E   &kp R &kp T                         &kp Y   &kp U   &kp I   &kp O   &kp P   &kp BSPC
+&kp LCTRL &kp A &kp S &kp D   &kp F &kp G                         &kp H   &kp J   &kp K   &kp L   &kp SEMI &kp SQT
+&kp LSHIFT &kp Z &kp X &kp C &kp V &kp B &bootloader &bootloader  &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp ESC
+                       &kp LGUI &lt LWR TAB &kp SPACE             &kp RET &lt RAI RIGHT &kp LALT
+            >;
         };
 
         extra2 {
