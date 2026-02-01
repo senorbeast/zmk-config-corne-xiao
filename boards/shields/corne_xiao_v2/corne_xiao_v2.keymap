@@ -62,6 +62,7 @@
 
     keymap {
         compatible = "zmk,keymap";
+        sensors = <&left_encoder &right_encoder>;
 
         // =========================================================================================
         // 🍎 MAC BASE LAYER
